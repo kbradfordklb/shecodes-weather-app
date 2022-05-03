@@ -76,12 +76,6 @@
     font-family: "VT323", monospace, serif;
   }
   
-  .header {
-    background: #08062e;
-    border: 1px solid;
-    border-color: #555593;
-  }
-  
   body {
     background-color: #08062e;
   }
@@ -151,6 +145,14 @@
     color: #ffe307;
     text-align: center;
     font-size: 25px;
+  }
+
+  #source {
+    color: #555593;
+  }
+
+  #code-link {
+    color: #fe2969;
   }
   
   .tree1 {
