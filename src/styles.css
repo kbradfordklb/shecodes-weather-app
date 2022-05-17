@@ -34,6 +34,24 @@
     max-width: 5%;
   }
   
+  .app-wrapper {
+    max-width: 1200px;
+    margin: 250px auto;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .card {
+    border: solid;
+    border-color: #555593;
+    background-color: #231f50;
+    font-family: "VT323", monospace, serif;
+  }
+  
+  body {
+    background-color: #08062e;
+  }
+
   .locations {
     border: solid;
     border-radius: 1px;
@@ -66,20 +84,6 @@
     min-width: 89%;
   }
   
-  .card {
-    border: solid;
-    border-color: #555593;
-    background-color: #231f50;
-    margin: 250px auto;
-    z-index: 1;
-    position: relative;
-    font-family: "VT323", monospace, serif;
-  }
-  
-  body {
-    background-color: #08062e;
-  }
-  
   h1 {
     padding-top: 5px;
     text-align: center;
@@ -96,14 +100,27 @@
     text-transform: capitalize;
   }
   
-  #today-emoji,
+  #today-weather {
+  padding: 25px 0px 50px 0px;
+  }
+
+#today-icon {
+  font-size: 120px;
+}
+
+#today-temp {
+  font-size: 80px;
+  text-align: left;
+  color: #555593;
+}
+
   #today-date,
-  #today-temp,
   #today-low,
   #today-description {
-    text-align: center;
+    text-align: right;
     color: #555593;
-    font-size: 40px;
+    font-size: 50px;
+    text-transform: capitalize;
   }
   
   .col.values {
@@ -120,7 +137,7 @@
     font-size: 80px;
     float: left;
   }
-  
+   
   .fa-solid {
     font-size: 50px;
     padding-top: 20px;

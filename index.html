@@ -31,11 +31,13 @@
 
     <img src="images/cloudflipped.png" alt="cloud1" class="cloud4" />
 
-    <div class="card" style="max-width: 1200px;">
+    <div class="container">
+    <div class="app-wrapper">
+    <div class="card">
       <form id="search-form">
         <input
           type="text"
-          placeholder="🔍Choose your loading area..."
+          placeholder="🔍 Choose your loading area..."
           id="city-search"
           autofocus="on"
           autocomplete="off"
@@ -44,7 +46,7 @@
         <input type="button" value="📍" id="current-button" />
       </form>
 
-      <div class="container">
+      
         <div class="locations">
           <div class="row">
             <div class="col">
@@ -79,49 +81,53 @@
 
         <h1>Your adventure begins in...</h1>
         <h2 id="city-name">San Diego</h2>
+        <div class="row" id="today-weather">
+          <div class="col-4 float-end">
+            <div class="day" id="today-date">Sunday 12:34</div>
+            <div class="low-temp" id="today-low">Low: 65° F</div>
+            <div class="description" id="today-description">Cloudy</div>
+          </div>
+          
+          <div class="col-4 d-flex justify-content-center align-self-center">
+            <i class="fa-solid fa-cloud" id="today-icon"></i>
+          </div>
 
-        <div class="day" id="today-date">Sunday 12:34</div>
-        <div class="temperature" id="today-temp">75°F</div>
-        <div class="low-temp" id="today-low">Low: 65° F</div>
-        <div class="description" id="today-description">Cloudy</div>
+          <div class="col-4 align-self-center">
+            <div class="temperature" id="today-temp">75°F</div>
+          </div>
+        </div>
 
         <div class="values">
           <div class="row">
-            <div class="col">
-              <i class="fa-solid fa-cloud"></i>
+            <div class="col card-column">
               <div class="day">Monday</div>
+              <i class="fa-solid fa-cloud"></i>
               <div class="temperature">65°F</div>
               <div class="low-temp">Low: 55° F</div>
             </div>
             <div class="col">
-              <i class="fa-solid fa-cloud"></i>
               <div class="day">Tuesday</div>
+              <i class="fa-solid fa-cloud"></i>
               <div class="temperature">65°F</div>
               <div class="low-temp">Low 55° F</div>
             </div>
             <div class="col">
-              <i class="fa-solid fa-cloud-showers-heavy"></i>
               <div class="day">Wednesday</div>
+              <i class="fa-solid fa-cloud-showers-heavy"></i>
               <div class="temperature">60°F</div>
               <div class="low-temp">Low 50° F</div>
             </div>
             <div class="col">
-              <i class="fa-solid fa-cloud"></i>
               <div class="day">Thursday</div>
+              <i class="fa-solid fa-cloud"></i>
               <div class="temperature">65°F</div>
               <div class="low-temp">Low 55° F</div>
             </div>
             <div class="col">
-              <i class="fa-solid fa-sun"></i>
               <div class="day">Friday</div>
+              <i class="fa-solid fa-sun"></i>
               <div class="temperature">70°F</div>
               <div class="low-temp">Low 55° F</div>
-            </div>
-            <div class="col">
-              <i class="fa-solid fa-sun"></i>
-              <div class="day">Saturday</div>
-              <div class="temperature">75°F</div>
-              <div class="low-temp">Low 65° F</div>
             </div>
           </div>
         </div>
@@ -130,8 +136,9 @@
           weather, only inappropriate clothing.”
         </p>
       </div>
-    <div id="source"><a href="https://github.com/kbradfordklb/shecodes-weather-app" id="code-link" target="blank">Open-source code</a> by Kerry Bradford-Mundt</div>
+    <small id="source"><a href="https://github.com/kbradfordklb/shecodes-weather-app" id="code-link" target="blank">Open-source code</a> by Kerry Bradford-Mundt</small>
   </div>
+</div>
     
     <img src="images/treefooter.png" alt="footer" class="tree1" />
 
