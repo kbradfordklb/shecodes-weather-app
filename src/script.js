@@ -13,9 +13,14 @@ function newDate(date) {
 
   let currentDay = days[now.getDay()];
   let currentHours= now.getHours();
-  if (currentHours < 10) {
-    currentHours = `0${currentHours}`;
+  if (currentHours >0 && currentHours <= 12) {
+    currentHours = currentHours;
+  } else if (currentHours > 12) {
+    currentHours = currentHours - 12;
+  } else if (currentHours == 0) {
+    hours = `12`;
   }
+  
   let currentMins = now.getMinutes();
   if (currentMins < 10) {
     currentMins = `0${currentMins}`;
@@ -31,10 +36,13 @@ function displayWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#today-temp").innerHTML = `${Math.round(
     response.data.main.temp
-  )}°F`;
+  )}`;
   document.querySelector("#today-low").innerHTML = `Low: ${Math.round(
     response.data.main.temp_min
-  )}°F`;
+  )}°`;
+  document.querySelector("#today-humidity").innerHTML = `Humidity: ${Math.round(
+    response.data.main.humidity
+  )}%`;
   document.querySelector("#today-description").innerHTML =
     response.data.weather[0].description;
 }

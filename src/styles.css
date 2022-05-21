@@ -1,210 +1,202 @@
 .cloud1 {
-    position: fixed;
-    top: 5%;
-    left: 6%;
-    bottom: auto;
-    right: auto;
-    max-width: 20%;
-  }
-  
-  .cloud2 {
-    position: fixed;
-    top: 5%;
-    left: 35%;
-    bottom: auto;
-    right: auto;
-    max-width: 10%;
-  }
-  
-  .cloud3 {
-    position: fixed;
-    top: 12%;
-    left: auto;
-    bottom: auto;
-    right: 34%;
-    max-width: 15%;
-  }
-  
-  .cloud4 {
-    position: fixed;
-    top: 3%;
-    left: auto;
-    bottom: auto;
-    right: 6%;
-    max-width: 20%;
-  }
-  
-  .app-wrapper {
-    max-width: 1200px;
-    margin: 250px auto;
-    z-index: 1;
-    position: relative;
-  }
-  
-  .card {
-    border: solid;
-    border-color: #555593;
-    background-color: #231f50;
-    font-family: "VT323", monospace, serif;
-  }
-  
-  body {
-    background-color: #08062e;
-  }
+  position: fixed;
+  top: 5%;
+  left: 6%;
+  bottom: auto;
+  right: auto;
+  max-width: 20%;
+}
 
-  .locations {
-    border: solid;
-    border-radius: 1px;
-    border-color: #555593;
-    padding: 0px 0px 0px 20px;
-    margin: 0px 40px;
-    font-size: 15px;
-  }
-  
-  p.savepoint {
-    font-size: 25px;
-    margin: auto 0;
-  }
-  
-  #search-form {
-    text-align: center;
-  }
-  
-  .search-button {
-    background: green;
-  }
-  .search-button:hover {
-    background: greenyellow;
-  }
-  
-  #city-search {
-    margin: 10px auto;
-    text-align: center;
-    font-size: 20px;
-    min-width: 89%;
-  }
-  
-  h1 {
-    padding-top: 25px;
-    text-align: center;
-    font-size: 30px;
-    color: #ffe307;
-  }
-  
-  #city-name {
-    text-align: center;
-    font-size: 40px;
-    color: #ffe307;
-    -webkit-text-stroke: 2px #555593;
-    font-family: "Press Start 2P", "VT323", monospace, serif;
-    text-transform: capitalize;
-  }
-  
-  #today-weather {
-    padding: 25px 0px 50px 0px;
-    }
+.cloud2 {
+  position: fixed;
+  top: 5%;
+  left: 35%;
+  bottom: auto;
+  right: auto;
+  max-width: 10%;
+}
+
+.cloud3 {
+  position: fixed;
+  top: 12%;
+  left: auto;
+  bottom: auto;
+  right: 34%;
+  max-width: 15%;
+}
+
+.cloud4 {
+  position: fixed;
+  top: 3%;
+  left: auto;
+  bottom: auto;
+  right: 6%;
+  max-width: 20%;
+}
+
+.app-wrapper {
+  max-width: 1200px;
+  margin: 250px auto;
+  z-index: 1;
+  position: relative;
+}
+
+.card {
+  border: solid;
+  border-color: #555593;
+  background-color: #231f50;
+  font-family: "VT323", monospace, serif;
+}
+
+body {
+  background-color: #08062e;
+}
+
+.locations {
+  border: solid;
+  border-radius: 1px;
+  border-color: #555593;
+  padding: 0px 0px 0px 20px;
+  margin: 0px 40px;
+  font-size: 15px;
+}
+
+p.savepoint {
+  font-size: 25px;
+  margin: auto 0;
+  color: #555593;
+}
+
+#search-form {
+  text-align: center;
+}
+
+.search-button {
+  background: green;
+}
+.search-button:hover {
+  background: greenyellow;
+}
+
+#city-search {
+  margin: 10px auto;
+  text-align: center;
+  font-size: 20px;
+  min-width: 89%;
+}
+
+h1 {
+  padding-top: 25px;
+  text-align: center;
+  font-size: 30px;
+  color: #ffe307;
+}
+
+#city-name {
+  text-align: center;
+  font-size: 40px;
+  color: #ffe307;
+  -webkit-text-stroke: 2px #555593;
+  font-family: "Press Start 2P", "VT323", monospace, serif;
+  text-transform: capitalize;
+}
+
+#today-weather {
+  padding: 25px 0px 50px 0px;
+}
+
+#today-date,
+#today-low,
+#today-humidity,
+#today-description {
+  text-align: right;
+  color: #555593;
+  font-size: 45px;
+  text-transform: capitalize;
+  line-height: 45px;
+}
 
 #today-icon {
   font-size: 120px;
 }
 
 #today-temp {
-  font-size: 80px;
+  font-size: 140px;
   text-align: left;
   color: #555593;
 }
 
-  #today-date,
-  #today-low,
-  #today-description {
-    text-align: right;
-    color: #555593;
-    font-size: 50px;
-    text-transform: capitalize;
-  }
-  
-  .col.values {
-    border: solid;
-    margin: 10px 2px;
-  }
-  .col {
-    text-align: center;
-    color: #555593;
-    font-size: 40px;
-  }
-  
-  #today-emoji {
-    font-size: 80px;
-    float: left;
-  }
-   
-  .fa-solid {
-    font-size: 50px;
-    padding-top: 20px;
-    color: #fe2969;
-    text-shadow: 3px 3px #c30a4e;
-  }
-  
-  .temperature {
-    font-size: 38px;
-    padding: 15px 0px 0px 0px;
-    line-height: 45px;
-    text-shadow: 3px 3px #47477c;
-    font-family: "Press Start 2P", "VT323", monospace, serif;
-  }
-  
-  .low-temp {
-    font-size: 28px;
-    line-height: 35px;
-  }
-  
-  p.footer {
-    color: #ffe307;
-    text-align: center;
-    font-size: 25px;
-  }
+.units {
+  color: #555593;
+  font-size: 50px;
+  position: relative;
+  top: -50px;
+}
 
-  #source {
-    color: #555593;
-  }
+.col.forecast {
+  text-align: center;
+  color: #555593;
+  font-size: 40px;
+}
 
-  #code-link {
-    color: #fe2969;
-  }
+.low-temp {
+  opacity: 0.6;
+}
   
-  .tree1 {
-    position: fixed;
-    top: auto;
-    right: auto;
-    left: 0%;
-    bottom: 0%;
-    max-width: 25%;
-  }
-  
-  .tree2 {
-    position: fixed;
-    top: auto;
-    right: auto;
-    left: 25%;
-    bottom: 0%;
-    max-width: 25%;
-  }
-  
-  .tree3 {
-    position: fixed;
-    top: auto;
-    right: 25%;
-    left: auto;
-    bottom: 0%;
-    max-width: 25%;
-  }
-  
-  .tree4 {
-    position: fixed;
-    top: auto;
-    right: 0%;
-    left: auto;
-    bottom: 0%;
-    max-width: 25%;
-  }
-  
+.fa-solid {
+  font-size: 50px;
+  padding-top: 20px;
+  color: #fe2969;
+  text-shadow: 3px 3px #c30a4e;
+}
+
+p.footer {
+  color: #ffe307;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+#source {
+  color: #555593;
+}
+
+#code-link {
+  color: #fe2969;
+}
+
+.tree1 {
+  position: fixed;
+  top: auto;
+  right: auto;
+  left: 0%;
+  bottom: 0%;
+  max-width: 25%;
+}
+
+.tree2 {
+  position: fixed;
+  top: auto;
+  right: auto;
+  left: 25%;
+  bottom: 0%;
+  max-width: 25%;
+}
+
+.tree3 {
+  position: fixed;
+  top: auto;
+  right: 25%;
+  left: auto;
+  bottom: 0%;
+  max-width: 25%;
+}
+
+.tree4 {
+  position: fixed;
+  top: auto;
+  right: 0%;
+  left: auto;
+  bottom: 0%;
+  max-width: 25%;
+}

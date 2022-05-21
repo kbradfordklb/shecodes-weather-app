@@ -82,9 +82,10 @@
         <h1>Your adventure begins in...</h1>
         <h2 id="city-name">San Diego</h2>
         <div class="row" id="today-weather">
-          <div class="col-4 float-end">
+          <div class="col-4 text-end align-self-center">
             <div class="day" id="today-date">Sunday 12:34</div>
-            <div class="low-temp" id="today-low">Low: 65° F</div>
+            <div id="today-low">Low: 65°</div>
+            <div class="humidity" id="today-humidity"> Humidity: 10%</div>
             <div class="description" id="today-description">Cloudy</div>
           </div>
           
@@ -92,42 +93,66 @@
             <i class="fa-solid fa-cloud" id="today-icon"></i>
           </div>
 
-          <div class="col-4 align-self-center">
-            <div class="temperature" id="today-temp">75°F</div>
+          <div class="col-4 text-start align-self-center">
+            <span class="temperature" id="today-temp">75</span>
+            <span class="units">°F | °C</span>
           </div>
         </div>
 
-        <div class="values">
+        <div class="forecast">
           <div class="row">
-            <div class="col card-column">
-              <div class="day">Monday</div>
-              <i class="fa-solid fa-cloud"></i>
-              <div class="temperature">65°F</div>
-              <div class="low-temp">Low: 55° F</div>
+            <div class="col forecast">
+              
+                <div class="text-center card-content">
+                  <div class="day">Monday</div>
+                  <div class="temperature">
+                  <span class="max-temp">65°|</span>
+                  <span class="low-temp">55°</div>
+                  <i class="fa-solid fa-cloud"></i>
+                </div> 
+             
             </div>
-            <div class="col">
-              <div class="day">Tuesday</div>
-              <i class="fa-solid fa-cloud"></i>
-              <div class="temperature">65°F</div>
-              <div class="low-temp">Low 55° F</div>
+            <div class="col forecast">
+              
+                <div class="text-center card-content">
+                  <div class="day">Tuesday</div>
+                  <div class="temperature">
+                  <span class="max-temp">65°|</span>
+                  <span class="low-temp">55°</div>
+                  <i class="fa-solid fa-cloud"></i>
+                </div> 
+            
             </div>
-            <div class="col">
-              <div class="day">Wednesday</div>
-              <i class="fa-solid fa-cloud-showers-heavy"></i>
-              <div class="temperature">60°F</div>
-              <div class="low-temp">Low 50° F</div>
+            <div class="col forecast">
+            
+                <div class="text-center card-content">
+                  <div class="day">Wednesday</div>
+                  <div class="temperature">
+                  <span class="max-temp">65°|</span>
+                  <span class="low-temp">55°</div>
+                  <i class="fa-solid fa-cloud"></i>
+                </div> 
+              
             </div>
-            <div class="col">
-              <div class="day">Thursday</div>
-              <i class="fa-solid fa-cloud"></i>
-              <div class="temperature">65°F</div>
-              <div class="low-temp">Low 55° F</div>
+            <div class="col forecast">
+            
+                <div class="text-center card-content">
+                  <div class="day">Thursday</div>
+                  <div class="temperature">
+                  <span class="max-temp">65°|</span>
+                  <span class="low-temp">55°</div>
+                  <i class="fa-solid fa-cloud"></i>
+                </div> 
             </div>
-            <div class="col">
-              <div class="day">Friday</div>
-              <i class="fa-solid fa-sun"></i>
-              <div class="temperature">70°F</div>
-              <div class="low-temp">Low 55° F</div>
+            <div class="col forecast">
+              
+                <div class="text-center card-content">
+                  <div class="day">Friday</div>
+                  <div class="temperature">
+                  <span class="max-temp">65°|</span>
+                  <span class="low-temp">55°</div>
+                  <i class="fa-solid fa-cloud"></i>
+                </div> 
             </div>
           </div>
         </div>
