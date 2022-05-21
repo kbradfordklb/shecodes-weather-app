@@ -1,37 +1,37 @@
 .cloud1 {
     position: fixed;
     top: 5%;
-    left: 17%;
-    right: auto;
+    left: 6%;
     bottom: auto;
-    max-width: 13%;
+    right: auto;
+    max-width: 20%;
   }
   
   .cloud2 {
     position: fixed;
     top: 5%;
-    right: 17%;
-    left: auto;
+    left: 35%;
     bottom: auto;
-    max-width: 18%;
+    right: auto;
+    max-width: 10%;
   }
   
   .cloud3 {
     position: fixed;
-    top: 4%;
-    right: 41%;
+    top: 12%;
     left: auto;
     bottom: auto;
-    max-width: 10%;
+    right: 34%;
+    max-width: 15%;
   }
   
   .cloud4 {
     position: fixed;
-    top: 13%;
-    right: auto;
-    left: 37%;
+    top: 3%;
+    left: auto;
     bottom: auto;
-    max-width: 5%;
+    right: 6%;
+    max-width: 20%;
   }
   
   .app-wrapper {
@@ -85,7 +85,7 @@
   }
   
   h1 {
-    padding-top: 5px;
+    padding-top: 25px;
     text-align: center;
     font-size: 30px;
     color: #ffe307;
@@ -101,8 +101,8 @@
   }
   
   #today-weather {
-  padding: 25px 0px 50px 0px;
-  }
+    padding: 25px 0px 50px 0px;
+    }
 
 #today-icon {
   font-size: 120px;

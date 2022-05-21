@@ -12,9 +12,15 @@ function newDate(date) {
   ];
 
   let currentDay = days[now.getDay()];
-  let currentTime = now.getHours();
+  let currentHours= now.getHours();
+  if (currentHours < 10) {
+    currentHours = `0${currentHours}`;
+  }
   let currentMins = now.getMinutes();
-  let fullDate = `${currentDay} ${currentTime}:${currentMins}`;
+  if (currentMins < 10) {
+    currentMins = `0${currentMins}`;
+  }
+  let fullDate = `${currentDay} ${currentHours}:${currentMins}`;
   return fullDate;
 }
 let timeDate = document.querySelector("#today-date");
