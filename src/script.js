@@ -45,6 +45,12 @@ function displayWeather(response) {
   )}%`;
   document.querySelector("#today-description").innerHTML =
     response.data.weather[0].description;
+  let iconElement = document.querySelector("#today-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let searchedCity = document.querySelector("#search-form");
