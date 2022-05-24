@@ -107,13 +107,26 @@ h1 {
 
 #today-date,
 #today-low,
-#today-humidity,
 #today-description {
   text-align: right;
   color: #555593;
   font-size: 45px;
   text-transform: capitalize;
   line-height: 45px;
+}
+
+#today-humidity,
+#today-speed {
+  text-align: right;
+  color: #555593;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+#humidity-icon, 
+#speed-icon {
+  color: #fe2969;
+  font-size: 30px;
 }
 
 #today-icon {
@@ -131,6 +144,26 @@ h1 {
   font-size: 50px;
   position: relative;
   top: -50px;
+}
+
+.units .active {
+  color: #555593;
+  cursor: default;
+  text-decoration: none;
+}
+
+.units .active:hover {
+  text-decoration: none;
+}
+
+a {
+  color: #555593;
+  text-decoration: none;
+}
+
+a:hover {
+  color:#555593;
+  opacity: 0.6;
 }
 
 .col.forecast {
