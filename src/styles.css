@@ -35,7 +35,7 @@
 }
 
 .app-wrapper {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 250px auto;
   z-index: 1;
   position: relative;
@@ -73,9 +73,26 @@ p.savepoint {
 
 .search-button {
   background: green;
+  animation: glowing 1300ms infinite;
 }
 .search-button:hover {
   background: greenyellow;
+  animation-play-state: paused;
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+  50% {
+    background-color: greenyellow;
+    box-shadow: 0 0 20px greenyellow;
+  }
+  100% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
 }
 
 #city-search {
@@ -141,7 +158,7 @@ h1 {
 
 .units {
   color: #555593;
-  font-size: 50px;
+  font-size: 40px;
   position: relative;
   top: -50px;
 }

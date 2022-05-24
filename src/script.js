@@ -31,6 +31,35 @@ function newDate(date) {
 let timeDate = document.querySelector("#today-date");
 timeDate.innerHTML = newDate(now);
 
+//Display weather of current city upon page load
+function displayCurrentWeather(response) {
+  document.querySelector("#city-name").innerHTML = response.data.name;
+  document.querySelector("#today-temp").innerHTML = `${Math.round(
+    response.data.main.temp
+  )}`;
+  document.querySelector("#today-low").innerHTML = `Low: ${Math.round(
+    response.data.main.temp_min
+  )}°`;
+  document.querySelector("#today-speed").innerHTML = ` ${Math.round(
+    response.data.wind.speed
+  )} mph`;
+  document.querySelector("#today-humidity").innerHTML = ` ${Math.round(
+    response.data.main.humidity
+  )}%`;
+  document.querySelector("#today-description").innerHTML =
+    response.data.weather[0].description;
+  let iconElement = document.querySelector("#today-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+}
+
+  let apiKey = "235ca990216eca6a451a3d1c3682fb84";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=San Diego&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayWeather);
+
 // Display weather info from city entered in search
 function displayWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
@@ -64,10 +93,27 @@ searchedCity.addEventListener("submit", search);
 function search(event) {
   event.preventDefault();
   let city = document.querySelector("#city-search").value;
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiKey = "235ca990216eca6a451a3d1c3682fb84";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial `;
   axios.get(apiUrl).then(displayWeather);
 }
+
+//Current location button
+function getCurrentLocation(event) {
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+function searchLocation(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  
+  let apiKey = "235ca990216eca6a451a3d1c3682fb84";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+
+  axios.get(apiUrl).then(displayWeather);
+}
+let currentButton = document.querySelector("#current-button");
+currentButton.addEventListener("click", getCurrentLocation);
 
 //Convert Fahrenheit to Celsius
 let celsiusLink=document.querySelector("#celsius-link");
@@ -97,22 +143,6 @@ function displayFahrenheitTemperature(event) {
   let temperatureElement = document.querySelector("#today-temp");
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
-
-//Current location button
-function searchLocation(position) {
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
-
-  axios.get(apiUrl).then(displayWeather);
-}
-
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}
-
-let currentButton = document.querySelector("#current-button");
-currentButton.addEventListener("click", getCurrentLocation);
 
 //display forecast
 function displayForecast(response) {
@@ -150,3 +180,5 @@ function displayForecast(response) {
 
   showFahrenheit();
 }
+
+search("San Diego");
