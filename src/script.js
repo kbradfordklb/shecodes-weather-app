@@ -145,40 +145,22 @@ function displayFahrenheitTemperature(event) {
 }
 
 //display forecast
-function displayForecast(response) {
-  let forecast = response.data.daily;
-
-  let forecastElement = document.querySelector("#forecast");
-
-  let forecastHTML = `<div class="row" id="forecast-row">`;
-  forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
-      forecastHTML =
-        forecastHTML +
-        `
-        <div class="col forecast">
+function displayForecast () {
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastElement.innerHTML = `
+    <div class="row">
+    <div class="col forecast">
         <div class="text-center card-content">
-          <div class="day">${formatDay(forecastDay.dt)}</div>
-        </div>
-        
-        <div class="temperature">
-              <span class="max-temp">${Math.round(forecastDay.temp.max)}°|</span>
-              <span class="low-temp">${Math.round(forecastDay.temp.min)}°</span>
+          <div class="day">Monday</div>
+          <div class="temperature">
+          <span class="max-temp">65°|</span>
+          <span class="low-temp">55°</span>
           </div>
-        
-        <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
-          alt="clear" 
-          id="today-icon" 
-          width="120px"
-          />
-        </div>`;
-    }
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-
-  showFahrenheit();
+          <i class="fa-solid fa-cloud"></i>
+        </div> 
+    </div>
+  </div>
+  `;
 }
 
-search("San Diego");
+displayForecast();
