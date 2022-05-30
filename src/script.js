@@ -12,20 +12,31 @@ function newDate() {
   ];
 
   let currentDay = days[now.getDay()];
-  let currentHours= now.getHours();
+  
+ let currentHours= now.getHours();
+ 
+ let amOrPm = "";
+  if (currentHours >= 12) {
+    amOrPm = "PM";
+  } else {
+    amOrPm = "AM";
+  }
+ 
   if (currentHours >0 && currentHours <= 12) {
     currentHours = currentHours;
   } else if (currentHours > 12) {
     currentHours = currentHours - 12;
   } else if (currentHours == 0) {
-    hours = `12`;
+    currentHours = `12`;
   }
+
+ 
   
   let currentMins = now.getMinutes();
   if (currentMins < 10) {
     currentMins = `0${currentMins}`;
   }
-  let fullDate = `${currentDay} ${currentHours}:${currentMins}`;
+  let fullDate = `${currentDay} ${currentHours}:${currentMins} ${amOrPm}`;
   return fullDate;
 }
 let timeDate = document.querySelector("#today-date");
