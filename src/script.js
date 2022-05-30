@@ -1,6 +1,6 @@
 // Display current date + time
 let now = new Date();
-function newDate(date) {
+function newDate() {
   let days = [
     "Sunday",
     "Monday",
@@ -37,9 +37,6 @@ function displayCurrentWeather(response) {
   document.querySelector("#today-temp").innerHTML = `${Math.round(
     response.data.main.temp
   )}`;
-  document.querySelector("#today-low").innerHTML = `Low: ${Math.round(
-    response.data.main.temp_min
-  )}°`;
   document.querySelector("#today-speed").innerHTML = ` ${Math.round(
     response.data.wind.speed
   )} mph`;
@@ -67,9 +64,6 @@ function displayWeather(response) {
   document.querySelector("#today-temp").innerHTML = `${Math.round(
     response.data.main.temp
   )}`;
-  document.querySelector("#today-low").innerHTML = `Low: ${Math.round(
-    response.data.main.temp_min
-  )}°`;
   document.querySelector("#today-speed").innerHTML = ` ${Math.round(
     response.data.wind.speed
   )} mph`;
@@ -147,27 +141,39 @@ function displayFahrenheitTemperature(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
+//format date in forecast
+function formatForecastDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  return days[day];
+}
+
 //display forecast
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   
   let forecastElement = document.querySelector("#weather-forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
 
   let forecastHTML= `<div class="row">`;
-  days.forEach(function(day) {
-  forecastHTML = forecastHTML + `
+  forecast.forEach(function (forecastDay, index) {
+  if (index < 5) {
+    forecastHTML = forecastHTML + `
     <div class="col forecast">
         <div class="text-center card-content">
-          <div class="day">${day}</div>
+          <div class="day">${formatForecastDate(forecastDay.dt)}</div>
           <div class="temperature">
-          <span class="max-temp">65°|</span>
-          <span class="low-temp">55°</span>
+          <span class="max-temp">${Math.round(forecastDay.temp.max)}°|</span>
+          <span class="low-temp">${Math.round(forecastDay.temp.min)}°</span>
           </div>
-          <i class="fa-solid fa-cloud"></i>
+          <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+          alt"" 
+          />
         </div> 
     </div>
   `;
+  }
   });
 
   forecastHTML = forecastHTML + `</div>`;

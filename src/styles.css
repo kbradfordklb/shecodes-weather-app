@@ -119,11 +119,10 @@ h1 {
 }
 
 #today-weather {
-  padding: 25px 0px 50px 0px;
+  padding: 25px 0px 25px 0px;
 }
 
 #today-date,
-#today-low,
 #today-description {
   text-align: right;
   color: #555593;
