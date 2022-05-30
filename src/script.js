@@ -162,14 +162,16 @@ function displayForecast(response) {
     forecastHTML = forecastHTML + `
     <div class="col forecast">
         <div class="text-center card-content">
+          <img src="images/icons/${forecastDay.weather[0].icon}.png" 
+          alt"" class="forecastIcon" width="60px"
+          />
           <div class="day">${formatForecastDate(forecastDay.dt)}</div>
+          
           <div class="temperature">
           <span class="max-temp">${Math.round(forecastDay.temp.max)}°|</span>
           <span class="low-temp">${Math.round(forecastDay.temp.min)}°</span>
           </div>
-          <img src="images/icons/${forecastDay.weather[0].icon}.png" 
-          alt"" class="forecastIcon" width="70px"
-          />
+          
         </div> 
     </div>
   `;

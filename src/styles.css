@@ -49,7 +49,8 @@
 }
 
 body {
-  background-color: #08062e;
+  background: rgb(5,4,26);
+background: linear-gradient(180deg, rgba(5,4,26,1) 0%, rgba(8,6,46,1) 28%);
 }
 
 #search-form {
@@ -97,11 +98,11 @@ h1 {
 
 #city-name {
   text-align: center;
-  font-size: 40px;
+  font-size: 55px;
   color: #ffe307;
-  -webkit-text-stroke: 2px #555593;
   font-family: "Press Start 2P", "VT323", monospace, serif;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  text-shadow: 5px 5px #c30a4e;
 }
 
 #today-weather {
@@ -112,7 +113,7 @@ h1 {
 #today-description {
   text-align: right;
   color: #555593;
-  font-size: 45px;
+  font-size: 40px;
   text-transform: capitalize;
   line-height: 45px;
 }
@@ -132,11 +133,11 @@ h1 {
 }
 
 #today-icon {
-  font-size: 120px;
+  font-size: 100px;
 }
 
 #today-temp {
-  font-size: 140px;
+  font-size: 160px;
   text-align: left;
   color: #555593;
   text-shadow: 3px 3px #c30a4e;
@@ -177,13 +178,6 @@ a:hover {
 
 .low-temp {
   opacity: 0.6;
-}
-  
-.fa-solid {
-  font-size: 50px;
-  padding-top: 20px;
-  color: #fe2969;
-  text-shadow: 3px 3px #c30a4e;
 }
 
 p.footer {
