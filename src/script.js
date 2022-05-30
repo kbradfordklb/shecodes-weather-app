@@ -29,8 +29,6 @@ function newDate() {
   } else if (currentHours == 0) {
     currentHours = `12`;
   }
-
- 
   
   let currentMins = now.getMinutes();
   if (currentMins < 10) {
@@ -42,34 +40,8 @@ function newDate() {
 let timeDate = document.querySelector("#today-date");
 timeDate.innerHTML = newDate(now);
 
-//Display weather of current city upon page load
-function displayCurrentWeather(response) {
-  document.querySelector("#city-name").innerHTML = response.data.name;
-  document.querySelector("#today-temp").innerHTML = `${Math.round(
-    response.data.main.temp
-  )}`;
-  document.querySelector("#today-speed").innerHTML = ` ${Math.round(
-    response.data.wind.speed
-  )} mph`;
-  document.querySelector("#today-humidity").innerHTML = ` ${Math.round(
-    response.data.main.humidity
-  )}%`;
-  document.querySelector("#today-description").innerHTML =
-    response.data.weather[0].description;
-  let iconElement = document.querySelector("#today-icon");
-  iconElement.setAttribute(
-    "src",
-    `images/icons/${response.data.weather[0].icon}.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
 
-}
-
-  let apiKey = "235ca990216eca6a451a3d1c3682fb84";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=San Diego&appid=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(displayWeather);
-
-// Display weather info from city entered in search
+// Display weather info
 function displayWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#today-temp").innerHTML = `${Math.round(
@@ -95,7 +67,13 @@ function displayWeather(response) {
   getForecast(response.data.coord);
 }
 
-let searchedCity = document.querySelector("#search-form");
+//Display San Diego weather upon page load
+let apiKey = "235ca990216eca6a451a3d1c3682fb84";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=San Diego&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayWeather);
+
+//Diplay weather info from city entered in search
+  let searchedCity = document.querySelector("#search-form");
 searchedCity.addEventListener("submit", search);
 
 function search(event) {
