@@ -54,6 +54,7 @@ function displayCurrentWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
 }
 
   let apiKey = "235ca990216eca6a451a3d1c3682fb84";
@@ -85,6 +86,8 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   fahrenheitTemp = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
 let searchedCity = document.querySelector("#search-form");
@@ -99,7 +102,7 @@ function search(event) {
 }
 
 //Current location button
-function getCurrentLocation(event) {
+function getCurrentLocation() {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
@@ -145,13 +148,18 @@ function displayFahrenheitTemperature(event) {
 }
 
 //display forecast
-function displayForecast () {
+function displayForecast(response) {
+  console.log(response.data.daily);
+  
   let forecastElement = document.querySelector("#weather-forecast");
-  forecastElement.innerHTML = `
-    <div class="row">
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML= `<div class="row">`;
+  days.forEach(function(day) {
+  forecastHTML = forecastHTML + `
     <div class="col forecast">
         <div class="text-center card-content">
-          <div class="day">Monday</div>
+          <div class="day">${day}</div>
           <div class="temperature">
           <span class="max-temp">65°|</span>
           <span class="low-temp">55°</span>
@@ -159,8 +167,16 @@ function displayForecast () {
           <i class="fa-solid fa-cloud"></i>
         </div> 
     </div>
-  </div>
   `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+    
 }
 
-displayForecast();
+function getForecast(coordinates) {
+  let apiKey = "235ca990216eca6a451a3d1c3682fb84";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
