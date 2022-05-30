@@ -52,23 +52,9 @@ body {
   background-color: #08062e;
 }
 
-.locations {
-  border: solid;
-  border-radius: 1px;
-  border-color: #555593;
-  padding: 0px 0px 0px 20px;
-  margin: 0px 40px;
-  font-size: 15px;
-}
-
-p.savepoint {
-  font-size: 25px;
-  margin: auto 0;
-  color: #555593;
-}
-
 #search-form {
   text-align: center;
+  padding-top: 10px;
 }
 
 .search-button {
