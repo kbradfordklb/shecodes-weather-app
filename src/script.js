@@ -48,7 +48,7 @@ function displayCurrentWeather(response) {
   let iconElement = document.querySelector("#today-icon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `images/icons/${response.data.weather[0].icon}.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
@@ -75,7 +75,7 @@ function displayWeather(response) {
   let iconElement = document.querySelector("#today-icon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `images/icons/${response.data.weather[0].icon}.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
@@ -167,8 +167,8 @@ function displayForecast(response) {
           <span class="max-temp">${Math.round(forecastDay.temp.max)}°|</span>
           <span class="low-temp">${Math.round(forecastDay.temp.min)}°</span>
           </div>
-          <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
-          alt"" 
+          <img src="images/icons/${forecastDay.weather[0].icon}.png" 
+          alt"" class="forecastIcon" width="70px"
           />
         </div> 
     </div>
