@@ -69,7 +69,7 @@ function displayWeather(response) {
 
 //Display San Diego weather upon page load
 let apiKey = "235ca990216eca6a451a3d1c3682fb84";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=San Diego&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Crystal Falls&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeather);
 
 //Diplay weather info from city entered in search
